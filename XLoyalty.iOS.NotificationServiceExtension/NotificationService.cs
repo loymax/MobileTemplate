@@ -7,6 +7,8 @@
     [Register("NotificationService")]
     public class NotificationService : BaseNotificationService
     {
+        protected override string IosSharedContainerId => "group.CFBundleIdentifier";
+        
         protected NotificationService(IntPtr handle) 
             : base(handle)
         {

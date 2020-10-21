@@ -34,7 +34,7 @@ Development:
       Ios: False
     EnableCrashManager: False
   PushNotification: 
-    Enable: False
+    Enable: <%- enablePushNotification %>
 
 Staging:
   <<: *Default
@@ -50,7 +50,7 @@ Staging:
       Ios: "required"
     EnableCrashManager: True
   PushNotification: 
-    Enable: True
+    Enable: <%- enablePushNotification %>
 
 Production:
   <<: *Default
@@ -66,4 +66,4 @@ Production:
       Ios: "required"
     EnableCrashManager: True
   PushNotification: 
-    Enable: True
+    Enable: <%- enablePushNotification %>

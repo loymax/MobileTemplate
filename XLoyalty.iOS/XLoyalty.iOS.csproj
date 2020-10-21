@@ -472,5 +472,8 @@
   <ItemGroup>
     <BundleResource Include="style.less" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configs\Core.yaml" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
