@@ -1,0 +1,69 @@
+﻿Configs: &Default
+  Version: 2
+  AppName: <%- applicationNameContext %>
+  AgreementSettings:
+    Content: offer.html
+  ServerSettings:
+    VerifyPhoneCodeLength: 6
+    ForceDisableInputSocial: False
+  Analytics:
+    Google: 
+      Enable: <%- enableGoogleAnalytics %>
+  CachePolicyEnabled: True
+  ResendCodeConfirmTime: 60 #Время ожидания для повторной отправки кода подтверждения (секунды)
+  AnonymVirtualCard: True #Виртуальная карта для анонима 
+  ShowOptions:
+    ProfileCardViewModel: All #Отображать в меню "Моя карта" All or OnlyAuth
+    PersonalOffersViewModel: <%- enablePersonalOffers %> #Отображать в меню "Персональные акции" OnlyAuth or Never
+    PersonalGoodsViewModel: <%- enablePersonalGoods %> #Отображать в меню "Любимые товары" OnlyAuth or Never
+  Localization:
+    Enable: False #Подключение локализации
+    ViewLocalization: False #Отображение стартового экрана с выбором языка при первом запуске приложения
+
+Development:
+  <<: *Default
+  LoymaxEndpoint: 
+    AppUrl: http://public.rc.iis.local/api
+    ClientId: ""
+    PublicKey: ""
+    OfferId: "required"
+    PrivacyId: "required"
+  HockeyApp: 
+    AppKey:
+      Android: False
+      Ios: False
+    EnableCrashManager: False
+  PushNotification: 
+    Enable: False
+
+Staging:
+  <<: *Default
+  LoymaxEndpoint: 
+    AppUrl: https://public-demo.loymax.net/api
+    ClientId: ""
+    PublicKey: ""
+    OfferId: "required"
+    PrivacyId: "required"
+  HockeyApp:
+    AppKey:
+      Android: "required"
+      Ios: "required"
+    EnableCrashManager: True
+  PushNotification: 
+    Enable: True
+
+Production:
+  <<: *Default
+  LoymaxEndpoint:
+    AppUrl: <%- serverUrlContext %>
+    ClientId: ""
+    PublicKey: ""
+    OfferId: "required"
+    PrivacyId: "required"
+  HockeyApp: 
+    AppKey:
+      Android: "required"
+      Ios: "required"
+    EnableCrashManager: True
+  PushNotification: 
+    Enable: True

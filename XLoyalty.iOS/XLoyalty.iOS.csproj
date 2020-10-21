@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--/-:cnd -->
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <ProjectGuid>{48916FB6-3D1D-463D-9C65-4F2CEA9DC1CB}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace><%- namespaceContext %>.iOS</RootNamespace>
+    <AssemblyName><%- namespaceContext %>.iOS</AssemblyName>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <SkipValidatePackageReferences>true</SkipValidatePackageReferences>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <!-- Try set Loymax.ruleset -->
+  <PropertyGroup Condition="Exists('..\Loymax.ruleset')">
+    <CodeAnalysisRuleSet>..\Loymax.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <!-- Conditional -->
+  <!-- Debug -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>__IOS__;__MOBILE__;DEBUG</DefineConstants>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>false</MtouchFloat32>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>__IOS__;__MOBILE__;DEBUG</DefineConstants>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>false</MtouchFloat32>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <!-- Release -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>__IOS__;__MOBILE__;APPSTORE;RELEASE;TRACE</DefineConstants>
+    <OutputPath>bin\iPhone\$(Configuration)</OutputPath>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <IpaIncludeArtwork>false</IpaIncludeArtwork>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>__IOS__;__MOBILE__;RELEASE;TRACE</DefineConstants>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <!-- Ad-Hoc -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>__IOS__;__MOBILE__;ADHOC;TRACE</DefineConstants>
+    <OutputPath>bin\iPhone\$(Configuration)</OutputPath>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+  </PropertyGroup>
+  <!-- AppStore -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>__IOS__;__MOBILE__;APPSTORE;RELEASE;TRACE</DefineConstants>
+    <OutputPath>bin\iPhone\$(Configuration)</OutputPath>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <IpaIncludeArtwork>false</IpaIncludeArtwork>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Info.plist" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="ThemeManager.cs" />
+    <Compile Include="Views\MenuView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_lock.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_pin_map.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_merchants_list.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_merchants_map.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_merchants_map.imageset\ic_merchants_map%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_merchants_list.imageset\ic_merchants_list%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_offers_active.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_offers_active.imageset\ic_current-actions%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_offers_calendar.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_offers_calendar.imageset\ic_offers_calendar.png" />
+    <ImageAsset Include="Assets.xcassets\ic_offers_soon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_offers_soon.imageset\ic_stock-soon%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_button_close.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_button_close.imageset\ic_button_close%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_like.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_like.imageset\ic_like%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_like.imageset\ic_like%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_search.imageset\ic_search%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_offer_plus.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_offer_plus.imageset\ic_offer_plus%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_offer_plus.imageset\ic_offer_plus%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_offer_checkmark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_offer_checkmark.imageset\ic_offer_checkmark%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_offer_checkmark.imageset\ic_offer_checkmark%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_basket_empty.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_basket_few.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_basket_full.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_phone.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_phone.imageset\ic_phone%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_phone.imageset\ic_phone%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_lock.imageset\ic_lock%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_lock.imageset\ic_lock%403x.png" />
+    <ImageAsset Include="Assets.xcassets\im_logo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_logo.imageset\im_logo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\im_logo.imageset\im_logo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_attach.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_attach.imageset\ic_attach%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_attach.imageset\ic_attach%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_send.imageset\ic_send%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_merchants_list.imageset\ic_merchants_list%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_merchants_map.imageset\ic_merchants_map%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_pin_map.imageset\ic_pin_map%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_pin_map.imageset\ic_pin_map%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_basket_full.imageset\ic_basket_full%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_basket_full.imageset\ic_basket_full%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_basket_few.imageset\ic_basket_few%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_basket_few.imageset\ic_basket_few%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_basket_empty.imageset\ic_basket_empty%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_basket_empty.imageset\ic_basket_empty%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_email.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_email.imageset\ic_action_email%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_email.imageset\ic_action_email%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_phone.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_phone.imageset\ic_action_phone%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_phone.imageset\ic_action_phone%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_calendar.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_calendar.imageset\ic_calendar%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_calendar.imageset\ic_calendar%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_password_cell.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_password_cell.imageset\ic_password_cell%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_password_cell.imageset\ic_password_cell%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_cards_cell.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_cards_cell.imageset\ic_cards_cell%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_cards_cell.imageset\ic_cards_cell%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_profile_cell.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_profile_cell.imageset\ic_profile_cell%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_profile_cell.imageset\ic_profile_cell%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_logout_cell.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_logout_cell.imageset\ic_logout_cell%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_logout_cell.imageset\ic_logout_cell%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_contacts_cell.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_contacts_cell.imageset\ic_contacts_cell%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_contacts_cell.imageset\ic_contacts_cell%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_card.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_card.imageset\ic_attach_card%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_attach_card.imageset\ic_attach_card%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_cards_menegement_cell.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_cards_menegement_cell.imageset\ic_action_cards_menegement_cell%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_cards_menegement_cell.imageset\ic_action_cards_menegement_cell%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-2436h%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-736h%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-667h%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-568h%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_vkontakte.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_vkontakte.imageset\ic_vkontakte%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_vkontakte.imageset\ic_vkontakte%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_odnoklassniki.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_odnoklassniki.imageset\ic_odnoklassniki%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_odnoklassniki.imageset\ic_odnoklassniki%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_mymail.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_mymail.imageset\ic_mymail%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_mymail.imageset\ic_mymail%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_scanner.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_scanner.imageset\ic_scanner%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_scanner.imageset\ic_scanner%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_googleplus.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_googleplus.imageset\ic_googleplus%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_googleplus.imageset\ic_googleplus%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_plus.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_plus.imageset\ic_plus%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_plus.imageset\ic_plus%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_current_location.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_current_location.imageset\ic_current_location%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_current_location.imageset\ic_current_location%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_increase_zoom.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_increase_zoom.imageset\ic_increase_zoom%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_increase_zoom.imageset\ic_increase_zoom%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_reduction_zoom.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_reduction_zoom.imageset\ic_reduction_zoom%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_reduction_zoom.imageset\ic_reduction_zoom%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_arrow_up.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_arrow_up.imageset\ic_arrow_up%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_arrow_up.imageset\ic_arrow_up%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_arrow_down.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_arrow_down.imageset\ic_arrow_down%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_arrow_down.imageset\ic_arrow_down%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_sms.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_sms.imageset\ic_sms%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_sms.imageset\ic_sms%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_viber.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_viber.imageset\ic_viber%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_viber.imageset\ic_viber%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_social_networks.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_social_networks.imageset\ic_social_networks%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_social_networks.imageset\ic_social_networks%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_push.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_push.imageset\ic_push%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_push.imageset\ic_push%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_email.imageset\ic_email%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_block.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_block.imageset\ic_block%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_block.imageset\ic_block%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_about.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_about.imageset\ic_menu_about%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_about.imageset\ic_menu_about%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_offers.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_offers.imageset\ic_menu_offers%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_offers.imageset\ic_menu_offers%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_merchants.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_merchants.imageset\ic_menu_merchants%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_merchants.imageset\ic_menu_merchants%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_purchase.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_purchase.imageset\ic_menu_purchase%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_purchase.imageset\ic_menu_purchase%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_card.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_card.imageset\ic_menu_card%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_card.imageset\ic_menu_card%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_profile.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_profile.imageset\ic_menu_profile%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_profile.imageset\ic_menu_profile%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_notifications.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_notifications.imageset\ic_menu_notifications%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_notifications.imageset\ic_menu_notifications%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_support.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_support.imageset\ic_menu_support%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_support.imageset\ic_menu_support%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_signin.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_signin.imageset\ic_menu_signin%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_signin.imageset\ic_menu_signin%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_shopping.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_shopping.imageset\ic_menu_shopping%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_shopping.imageset\ic_menu_shopping%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_presonal_offers.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_presonal_offers.imageset\ic_menu_presonal_offers%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_presonal_offers.imageset\ic_menu_presonal_offers%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_goods_offers.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_goods_offers.imageset\ic_menu_goods_offers%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_goods_offers.imageset\ic_menu_goods_offers%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_more.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_more.imageset\ic_action_more%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_more.imageset\ic_action_more%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_language.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_language.imageset\ic_menu_language%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_language.imageset\ic_menu_language%402x.png" />
+    <ImageAsset Include="Assets.xcassets\im_language.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_language.imageset\im_language-1.png" />
+    <ImageAsset Include="Assets.xcassets\ic_favorite_goods_checked.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_favorite_goods_checked.imageset\ic_favorite_goods_checked%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_favorite_goods_checked.imageset\ic_favorite_goods_checked%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_favorite_goods_locked.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_favorite_goods_locked.imageset\ic_favorite_goods_locked%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_favorite_goods_locked.imageset\ic_favorite_goods_locked%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_attention.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_action_attention.imageset\ic_action_attention%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_action_attention.imageset\ic_action_attention%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_close.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_close.imageset\close%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_close.imageset\close%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_referral_cell.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_referral_cell.imageset\ic_referral_cell%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_referral_cell.imageset\ic_referral_cell%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_warning.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_warning.imageset\warning.png" /> 
+    <ImageAsset Include="Assets.xcassets\ic_filter.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_filter.imageset\filter-75.png" />
+    <ImageAsset Include="Assets.xcassets\ic_filter.imageset\filter-50.png" />
+    <ImageAsset Include="Assets.xcassets\ic_filter.imageset\filter-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\ic_lock.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_phone.imageset\" />
+    <Folder Include="Assets.xcassets\ic_pin_map.imageset\" />
+    <Folder Include="Assets.xcassets\ic_merchants_list.imageset\" />
+    <Folder Include="Assets.xcassets\ic_merchants_map.imageset\" />
+    <Folder Include="Assets.xcassets\ic_offers_active.imageset\" />
+    <Folder Include="Assets.xcassets\ic_offers_calendar.imageset\" />
+    <Folder Include="Assets.xcassets\ic_offers_soon.imageset\" />
+    <Folder Include="Assets.xcassets\ic_button_close.imageset\" />
+    <Folder Include="Assets.xcassets\ic_like.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_email.imageset\" />
+    <Folder Include="Assets.xcassets\ic_offer_plus.imageset\" />
+    <Folder Include="Assets.xcassets\ic_offer_checkmark.imageset\" />
+    <Folder Include="Assets.xcassets\ic_basket_empty.imageset\" />
+    <Folder Include="Assets.xcassets\ic_basket_few.imageset\" />
+    <Folder Include="Assets.xcassets\ic_basket_full.imageset\" />
+    <Folder Include="Assets.xcassets\im_logo.imageset\" />
+    <Folder Include="Assets.xcassets\ic_phone.imageset\" />
+    <Folder Include="Assets.xcassets\im_logo.imageset\" />
+    <Folder Include="Assets.xcassets\ic_attach.imageset\" />
+    <Folder Include="Assets.xcassets\ic_send.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_email.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_phone.imageset\" />
+    <Folder Include="Assets.xcassets\ic_calendar.imageset\" />
+    <Folder Include="Assets.xcassets\ic_password_cell.imageset\" />
+    <Folder Include="Assets.xcassets\ic_cards_cell.imageset\" />
+    <Folder Include="Assets.xcassets\ic_profile_cell.imageset\" />
+    <Folder Include="Assets.xcassets\ic_logout_cell.imageset\" />
+    <Folder Include="Assets.xcassets\ic_contacts_cell.imageset\" />
+    <Folder Include="Assets.xcassets\ic_attach_card.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_cards_menegement_cell.imageset\" />
+    <Folder Include="Assets.xcassets\ic_delete.imageset\" />
+    <Folder Include="Assets.xcassets\ic_facebook.imageset\" />
+    <Folder Include="Assets.xcassets\ic_vkontakte.imageset\" />
+    <Folder Include="Assets.xcassets\ic_odnoklassniki.imageset\" />
+    <Folder Include="Assets.xcassets\ic_twitter.imageset\" />
+    <Folder Include="Assets.xcassets\ic_mymail.imageset\" />
+    <Folder Include="Assets.xcassets\ic_scanner.imageset\" />
+    <Folder Include="Assets.xcassets\ic_googleplus.imageset\" />
+    <Folder Include="Assets.xcassets\ic_instagram.imageset\" />
+    <Folder Include="Assets.xcassets\ic_plus.imageset\" />
+    <Folder Include="Assets.xcassets\ic_sms.imageset\" />
+    <Folder Include="Assets.xcassets\ic_viber.imageset\" />
+    <Folder Include="Assets.xcassets\ic_social_networks.imageset\" />
+    <Folder Include="Assets.xcassets\ic_push.imageset\" />
+    <Folder Include="Assets.xcassets\ic_email.imageset\" />
+    <Folder Include="Assets.xcassets\ic_arrow_down.imageset\" />
+    <Folder Include="Assets.xcassets\ic_arrow_up.imageset\" />
+    <Folder Include="Assets.xcassets\ic_current_location.imageset\" />
+    <Folder Include="Assets.xcassets\ic_increase_zoom.imageset\" />
+    <Folder Include="Assets.xcassets\ic_reduction_zoom.imageset\" />
+    <Folder Include="Assets.xcassets\ic_block.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_offers.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_merchants.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_purchase.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_card.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_profile.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_notifications.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_support.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_signin.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_shopping.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_presonal_offers.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_goods_offers.imageset\" />
+    <Folder Include="Assets.xcassets\ic_search.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_more.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_language.imageset\" />
+    <Folder Include="Assets.xcassets\im_language.imageset\" />
+    <Folder Include="Assets.xcassets\ic_favorite_goods_checked.imageset\" />
+    <Folder Include="Assets.xcassets\ic_favorite_goods_locked.imageset\" />
+    <Folder Include="Assets.xcassets\ic_action_attention.imageset\" />
+    <Folder Include="Assets.xcassets\ic_referral_cell.imageset\" />
+    <Folder Include="Assets.xcassets\ic_close.imageset\" />
+    <Folder Include="Assets.xcassets\ic_warning.imageset\" />
+    <Folder Include="Assets.xcassets\ic_filter.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\<%- namespaceContext %>.Core\<%- namespaceContext %>.Core.csproj">
+      <Project>{84C19B6A-9BE8-4201-9EB3-DF7CD1A0CEAC}</Project>
+      <Name><%- namespaceContext %>.Core</Name>
+    </ProjectReference>
+     <ProjectReference Include="..\<%- namespaceContext %>.iOS.NotificationServiceExtension\<%- namespaceContext %>.iOS.NotificationServiceExtension.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{BCED875B-723A-4C1E-A2D2-0CD589EC6F6B}</Project>
+      <Name><%- namespaceContext %>.iOS.NotificationServiceExtension</Name>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="style.less" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

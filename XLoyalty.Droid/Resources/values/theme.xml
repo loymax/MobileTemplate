@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <!-- PRE-LOLLIPOP Application theme.  -->
+    <style
+        name  ="AppTheme.Main"
+        parent="Lmx">
+        <item
+            name="colorPrimary">@color/colorPrimary</item>
+        <item
+            name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item
+            name="colorAccent">@color/colorPrimary</item>
+    </style>
+    <!-- Splash screen application theme.  -->
+    <style
+        name  ="AppTheme.Splash"
+        parent="AppTheme.Main">
+    </style>
+    <!--  Override  -->
+    <style
+        name  ="Lmx"
+        parent="Theme.AppCompat.Light.NoActionBar">
+        <!--   Fonts     -->
+        <item
+            name="lmx_font_regular">@font/roboto_regular</item>
+        <item
+            name="lmx_font_regular_italic">@font/roboto_italic</item>
+        <item
+            name="lmx_font_bold">@font/roboto_bold</item>
+        <item
+            name="lmx_font_light">@font/roboto_light</item>
+        <item
+            name="lmx_font_medium">@font/roboto_medium</item>
+        <!--   Colors     -->
+        <item
+            name="lmx_main_color_offer_progress_bar">@color/colorPrimary</item>
+        <item
+            name="lmx_background_color_offer_progress_bar">#dddddd</item>
+        <item
+            name="lmx_color_primary_dark">@color/colorPrimaryDark</item>
+        <item
+            name="lmx_color_accent">@color/colorPrimary</item>
+        <item
+            name="lmx_color_accent_secondary">@color/colorSecondary</item>
+        <item
+            name="lmx_color_disable">@color/colorGray</item>
+        <item
+            name="lmx_color_error">@color/colorError</item>
+        <item
+            name="lmx_text_color">@color/colorBaseText</item>
+        <item
+            name="lmx_color_link">@color/colorPrimary</item>
+        <item
+            name="lmx_text_color_over_accent">@color/colorWhite</item>
+        <item
+            name="lmx_text_color_over_accent_secondary">@color/colorWhite</item>
+        <item
+            name="lmx_text_color_over_disable">@color/colorWhite</item>
+        <item
+            name="lmx_color_background">@color/colorBackground</item>
+        <item
+            name="lmx_ripple_color_accent">@color/colorPrimaryAlfa_40</item>
+        <item
+            name="lmx_ripple_color_over_accent">@color/colorWhiteAlfa_40</item>
+        <item
+            name="lmx_color_checkmark">@color/colorPrimary</item>
+        <!--  Overrides  -->
+        <item
+            name="lmx_text_color_tabs_title">@color/colorWhiteAlfa_60</item>
+        <item
+            name="lmx_background_navigation_activated">@color/colorPrimaryAlfa_15</item>
+        <!--  Icons  -->
+        <!--  Icons.Core  -->
+        <!--<item
+            name="lmx_im_placeholder">@drawable/im_broken_image</item>-->
+        <item
+            name="lmx_im_placeholder">@drawable/lmx_background_placeholder</item>
+        <item
+            name="lmx_ic_logo_large">@mipmap/ic_launcher</item>
+        <item
+            name="lmx_ic_logo_normal">@mipmap/ic_launcher</item>
+        <item
+            name="lmx_ic_logo_small">@mipmap/ic_launcher</item>
+        <item
+            name="lmx_ic_action_arrow_detail">@drawable/ic_action_arrow_detail</item>
+        <item
+            name="lmx_ic_action_arrow_down">@drawable/ic_action_arrow_down</item>
+        <item
+            name="lmx_ic_action_checkmark">@drawable/ic_action_checkmark</item>
+        <item
+            name="lmx_ic_action_delete">@drawable/ic_action_delete</item>
+        <item
+            name="lmx_ic_action_email">@drawable/ic_action_email</item>
+        <item
+            name="lmx_ic_action_flash">@drawable/ic_action_flash_on</item>
+        <item
+            name="lmx_ic_action_password">@drawable/ic_action_password</item>
+        <item
+            name="lmx_ic_pin">@drawable/ic_merchants_pin</item>
+        <item
+            name="lmx_ic_action_phone">@drawable/ic_action_phone</item>
+        <item
+            name="lmx_ic_offers_drop_down_menu">@drawable/ic_drop_down_menu</item>
+        <!--  Icons.Merchants  -->
+        <item
+            name="lmx_ic_merchants_pin">@drawable/ic_merchants_pin</item>
+        <item
+            name="lmx_ic_merchants_filter">@drawable/ic_merchant_filter</item>
+        <item
+            name="lmx_ic_search">@drawable/ic_search_w</item>
+        <!--  Icons.Offers  -->
+        <item
+            name="lmx_ic_offers_map">@drawable/ic_map</item>
+        <item
+            name="lmx_ic_qr_bar_code">@drawable/ic_card_lock</item>
+        <item
+            name="lmx_ic_offers_search">@drawable/ic_search</item>
+        <item
+            name="lmx_ic_offers_calendar">@drawable/ic_offers_calendar</item>
+        <item
+            name="lmx_ic_offers_product_details">@drawable/ic_offer_product_details</item>
+        <item
+            name="lmx_ic_offers_logo_card">@mipmap/ic_launcher</item>
+        <item
+            name="lmx_ic_barcode">@drawable/ic_barcode</item>
+        <!--  Icons.Profile  -->
+        <item
+            name="lmx_ic_action_plus_math">@drawable/ic_action_plus_math</item>
+        <item
+            name="lmx_ic_barcode_small">@drawable/ic_barcode_small</item>
+        <item
+            name="lmx_ic_close">@drawable/ic_close</item>
+        <item
+            name="lmx_ic_my_card">@drawable/ic_my_card</item>
+        <item
+            name="lmx_ic_blocked_card">@drawable/ic_blocked_card</item>
+        <item
+            name="lmx_im_card">@drawable/im_card</item>
+        <!--  Icons.PurchaseHistory  -->
+         <item
+            name="lmx_ic_purchase_history_gift">@drawable/ic_purchase_history_gift</item>
+        <item
+            name="lmx_ic_purchase_history_pin">@drawable/ic_purchase_history_pin</item>
+        <item
+            name="lmx_ic_purchase_history_calendar">@drawable/ic_offers_calendar</item>
+        <!--  Icons.ShoppingList  -->
+        <item
+            name="lmx_ic_basket_add">@drawable/ic_basket_add</item>
+        <item
+            name="lmx_ic_more">@drawable/ic_more</item>
+        <!--  Icons.SupportService  -->
+        <item
+            name="lmx_ic_action_attach">@drawable/ic_action_attach</item>
+        <item
+            name="lmx_ic_action_attention">@drawable/ic_action_attention</item>
+        <item
+            name="lmx_ic_action_sent">@drawable/ic_action_sent</item>
+    </style>
+</resources>

@@ -1,0 +1,3 @@
+EnableChat: <%- supportServiceEnableChat %>
+ContactPhone: <%- supportServiceContactPhone %>
+ContactEmail: <%- supportServiceContactEmail %>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android            ="http://schemas.android.com/apk/res/android"
+    android:layout_width     ="match_parent"
+    android:layout_height    ="match_parent"
+    android:fitsSystemWindows="true"
+    android:background       ="?attr/lmx_color_background">
+    <ImageView
+        style                        ="@style/Lmx.Widget.ImageView.Logo.Large"
+        android:layout_centerInParent="true"
+        android:src                  ="?attr/lmx_ic_logo_large" />
+</RelativeLayout>

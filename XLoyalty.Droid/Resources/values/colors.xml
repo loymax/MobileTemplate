@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color
+        name="colorPrimary"><%- styleTintColor %></color>
+    <color
+        name="colorPrimaryDark"><%- styleTintColor %></color>
+    <color
+        name="colorPrimaryAlfa_40">#66<%- styleTintColorNoSharp %></color>
+    <color
+        name="colorPrimaryAlfa_15">#26<%- styleTintColorNoSharp %></color>
+    <color
+        name="colorSecondary"><%- styleAccentColor %></color>
+    <color
+        name="colorGray">#AFAFAF</color>
+    <color
+        name="colorError">#B00020</color>
+    <color
+        name="colorBaseText">#D9000000</color>
+    <color
+        name="colorWhite">#FFFFFF</color>
+    <color
+        name="colorWhiteAlfa_40">#66FFFFFF</color>
+    <color
+        name="colorWhiteAlfa_60">#99FFFFFF</color>
+    <color
+        name="colorBlackAlfa_10">#1A000000</color>
+    <color
+        name="colorBlackAlfa_40">#66000000</color>
+    <color
+        name="colorBlackAlfa_60">#99000000</color>
+    <color
+        name="colorBackground">#FFFFFF</color>
+    <!--  Overrides  -->
+    <!--  Colors  -->
+    <!--  Colors.Core  -->
+    <color
+        name="lmx_text_color_enabled_button_contained">@color/colorWhite</color>
+    <color
+        name="lmx_text_color_disabled_button_contained">@color/colorWhite</color>
+    <color
+        name="lmx_text_color_enabled_button_outlined">@color/colorPrimary</color>
+    <color
+        name="lmx_text_color_disabled_button_outlined">@color/colorGray</color>
+    <color
+        name="lmx_text_color_enabled_button_text">@color/colorPrimary</color>
+    <color
+        name="lmx_text_color_disabled_button_text">@color/colorGray</color>
+    <color
+        name="lmx_text_color_navigation_activated">@color/colorPrimary</color>
+    <color
+        name="lmx_text_color_navigation">@color/colorBaseText</color>
+    <color
+        name="lmx_background_enabled_button_contained">@color/colorPrimary</color>
+    <color
+        name="lmx_background_disabled_button_contained">@color/colorGray</color>
+    <color
+        name="lmx_background_navigation_activated">@color/colorPrimaryAlfa_40</color>
+    <color
+        name="lmx_border_color_button_outlined">@color/colorGray</color>
+    <color
+        name="lmx_ripple_color_button_contained">@color/colorWhiteAlfa_40</color>
+    <color
+        name="lmx_ripple_color_button_outlined">@color/colorPrimaryAlfa_40</color>
+    <color
+        name="lmx_ripple_color_button_text">@color/colorPrimaryAlfa_40</color>
+    <color
+        name="lmx_ripple_color_button_toggle">@color/colorPrimaryAlfa_40</color>
+    <color
+        name="lmx_ripple_color_navigation">@color/colorBlackAlfa_40</color>
+    <color
+        name="lmx_indicator_color_progress_bar">@color/colorPrimary</color>
+    <!--  Colors.Notification-->
+    <color
+        name="lmx_notification_item_swipe_background_color">@color/colorBlackAlfa_60</color>
+    <color
+        name="lmx_notification_item_readed_background_color">@color/colorPrimary</color>
+    <color
+        name="lmx_background_goods_banner">#F8C01A</color>
+    <!--  Colors.ShoppingList-->
+    <color
+        name="lmx_shopping_basket_background_circle">@color/colorPrimary</color>
+    <color
+        name="lmx_shopping_basket_border_color">@color/colorGray</color>
+    <color
+        name="lmx_shopping_basket_background_item">@color/colorWhite</color>
+    <!--  Colors.SupportService-->
+    <color
+        name="lmx_support_background_to_me_message">@color/colorBlackAlfa_10</color>
+    <color
+        name="lmx_support_border_to_me_message">@color/colorGray</color>
+    <color
+        name="lmx_support_background_from_me_message">@color/colorWhite</color>
+    <color
+        name="lmx_support_border_from_me_message">@color/colorGray</color>
+</resources>
