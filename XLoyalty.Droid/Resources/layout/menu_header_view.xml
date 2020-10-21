@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	android:id           ="@+id/lmx_menu_header"
+    xmlns:android        ="http://schemas.android.com/apk/res/android"
+    xmlns:app            ="http://schemas.android.com/apk/res-auto"
+	xmlns:tools          ="http://schemas.android.com/tools"
+    android:layout_width ="match_parent"
+    android:layout_height="wrap_content"
+    android:background   ="?attr/lmx_color_accent"
+	android:paddingTop   ="@dimen/status_bar_height"
+	tools:background     ="#ffffff">
+    <RelativeLayout
+		android:id                ="@+id/lmx_menu_header_view_is_anonymous"
+        android:layout_width      ="match_parent"
+        android:layout_height     ="@dimen/nav_header_height"
+        android:layout_marginLeft ="@dimen/activity_horizontal_margin"
+		android:layout_marginRight="@dimen/activity_horizontal_margin"
+        app:MvxBind               ="Visibility InvertedVisibilityConverter(IsAuth)"
+		tools:background          ="#30ffff00">
+		<RelativeLayout
+			android:layout_above    ="@+id/menu_header_text_for_anonym"
+			android:layout_height   ="match_parent"
+			android:layout_width    ="match_parent"
+			android:gravity         ="center_vertical"
+			tools:background        ="#22ff0000">
+			<ImageView
+                android:layout_marginTop   ="@dimen/activity_vertical_margin_half"
+                android:layout_marginBottom="@dimen/activity_vertical_margin_half"
+				android:layout_width       ="wrap_content"
+				android:layout_height      ="wrap_content"
+				app:MvxBind                ="ImageSource 'lmx_ic_logo_normal'"
+				tools:src                  ="@tools:sample/avatars"/>
+		</RelativeLayout>
+		<LinearLayout
+			android:id                      ="@+id/menu_header_text_for_anonym"
+			android:layout_marginBottom     ="@dimen/activity_vertical_margin"
+            android:orientation             ="vertical"
+            android:layout_width            ="match_parent"
+            android:layout_height           ="wrap_content"
+			android:layout_alignParentBottom="true">
+			<TextView
+				style                ="@style/Lmx.TextAppearance.Headline.H6"
+				android:layout_width ="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor    ="?attr/lmx_text_color_over_accent"
+				app:MvxBind          ="Text Settings.Environment.AppName" 
+				tools:text           ="Playground"/>
+			<TextView
+				style				 ="@style/Lmx.TextAppearance.Subtitle.S2"
+				android:layout_width ="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor	 ="?attr/lmx_text_color_over_accent"
+				app:MvxBind			 ="Text BalanceShortInfoConverter(CurrentUser.BalanceShortInfo); Visibility VisibilityConverter(HaveIsVirtualCard)"
+				tools:text           ="У вас 10 балов"/>
+		</LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width      ="match_parent"
+		android:layout_below      ="@+id/lmx_menu_header_view_is_anonymous"
+        android:layout_height     ="@dimen/nav_header_height"
+        android:layout_marginLeft ="@dimen/activity_horizontal_margin"
+		android:layout_marginRight="@dimen/activity_horizontal_margin"
+        app:MvxBind               ="Visibility VisibilityConverter(IsAuth)"
+		tools:background          ="#200000ff">
+		<RelativeLayout
+			android:layout_height   ="match_parent"
+			android:layout_width    ="match_parent"
+			android:layout_above    ="@+id/menu_header_balance"
+			android:gravity         ="center_vertical"
+			tools:background        ="#33ff00aa">
+			<RelativeLayout   
+				android:id            ="@+id/menu_header_avatar"
+				android:layout_width  ="70dp"
+				android:layout_height ="70dp"
+				android:layout_gravity="center_vertical"
+				android:background    ="@drawable/lmx_background_avatar"
+                tools:background      ="@tools:sample/avatars">
+				<TextView
+					style                        ="@style/Lmx.TextAppearance.Headline.H6"
+					android:layout_width         ="wrap_content"
+					android:layout_height        ="wrap_content"
+					android:layout_centerInParent="true"
+					android:textColor            ="?attr/lmx_text_color_over_accent_secondary"
+					app:MvxBind                  ="Text AbbreviateConverter(CurrentUser.Username)" 
+					tools:text                   ="ИМИ"/>
+			</RelativeLayout>
+			<TextView
+				style                    ="@style/Lmx.TextAppearance.Subtitle.S1"
+				android:layout_height    ="70dp"
+			    android:layout_width     ="match_parent"
+			    android:gravity          ="center_vertical"
+				android:layout_toRightOf ="@+id/menu_header_avatar"
+				android:layout_marginLeft="@dimen/activity_horizontal_margin_half"
+				android:textColor        ="?attr/lmx_text_color_over_accent"
+				app:MvxBind              ="Text CurrentUser.Username"	
+				tools:text               ="Иванов Дед Максим Иванович"
+			    tools:background         ="#50400000"/>
+		</RelativeLayout>
+        <LinearLayout
+			    android:id                      ="@+id/menu_header_balance"
+                android:orientation             ="vertical"
+                android:layout_width            ="match_parent"
+                android:layout_height           ="wrap_content"
+                android:layout_gravity          ="center_vertical"
+				android:layout_marginBottom     ="@dimen/activity_vertical_margin"
+			    android:layout_alignParentBottom="true">
+                <TextView
+                    style                ="@style/Lmx.TextAppearance.Subtitle.S2"
+                    android:layout_width ="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor    ="?attr/lmx_text_color_over_accent"
+                    app:MvxBind          ="Text BalanceShortInfoConverter(CurrentUser.BalanceShortInfo)"
+				    tools:text           ="У вас 10 балов"/>
+        </LinearLayout>
+    </RelativeLayout>
+	<RelativeLayout
+		android:id                     ="@+id/lmx_menu_header_localization_layout"
+		android:layout_width           ="wrap_content"
+		android:layout_height          ="wrap_content"
+		android:layout_alignParentRight="true"
+		app:MvxBind                    ="Visibility InvertedVisibilityConverter(!IsLocalization)">
+		<LinearLayout
+			android:layout_width           ="wrap_content"
+		    android:layout_height          ="wrap_content"
+			android:clickable              ="true"
+			android:orientation            ="horizontal"
+			android:paddingLeft            ="@dimen/activity_horizontal_margin"
+			android:paddingRight           ="@dimen/activity_horizontal_margin"
+			android:paddingTop             ="@dimen/activity_horizontal_margin_half"
+			android:paddingBottom          ="@dimen/activity_horizontal_margin_half"
+			app:MvxBind                    ="Click ChangeLocalizationCommand">
+			<ImageView
+				android:id                   ="@+id/lmx_menu_header_image_localization"
+				android:layout_width         ="24dp"
+				android:layout_height        ="24dp"
+				android:layout_marginRight   ="@dimen/activity_horizontal_margin_half"
+				android:src                  ="@drawable/ic_menu_language"/>
+			<TextView
+				style                          ="@style/Lmx.TextAppearance.Subtitle.S1"
+				android:id                     ="@+id/lmx_menu_header_text_localization"
+				android:layout_width           ="wrap_content"
+				android:layout_height          ="wrap_content"
+				android:textColor              ="#7fffffff"
+				tools:text                     ="RU"
+				app:MvxBind                    ="Text CurrentCulture"/>
+		</LinearLayout>
+	</RelativeLayout>
+</RelativeLayout>

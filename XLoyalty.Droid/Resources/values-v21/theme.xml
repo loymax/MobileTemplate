@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <style
+        name  ="AppTheme.Main"
+        parent="Lmx">
+        <item
+            name="colorPrimary">@color/colorPrimary</item>
+        <item
+            name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item
+            name="colorAccent">@color/colorPrimary</item>
+        <item
+            name="android:statusBarColor">@android:color/transparent</item>
+        <item
+            name="android:statusBarColor">#50000000</item>
+        <item
+            name="android:windowTranslucentStatus">true</item>
+        <item
+            name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+</resources>

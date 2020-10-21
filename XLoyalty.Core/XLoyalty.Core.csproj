@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--/-:cnd -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Properties -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <AssetTargetFallback>$(AssetTargetFallback);portable45-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ErrorReport>prompt</ErrorReport>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>false</GenerateBindingRedirectsOutputType>
+    <NetStandardImplicitPackageVersion>2.0.1</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+  <!-- Try set Loymax.ruleset -->
+  <PropertyGroup Condition="Exists('..\Loymax.ruleset')">
+    <CodeAnalysisRuleSet>..\Loymax.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <!-- Conditional -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Ad-Hoc|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>ADHOC;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>RELEASE;TRACE</DefineConstants>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="FodyWeavers.xml" />
+    <None Remove="Locales\ru.yaml" />
+    <EmbeddedResource Include="Locales\ru.yaml" />
+    <None Remove="Configs\config.yaml" />
+    <EmbeddedResource Include="Configs\config.yaml" />
+    <None Remove="Configs\SupportService.yaml" />
+    <EmbeddedResource Include="Configs\SupportService.yaml" />
+    <None Remove="Configs\Offers.yaml" />
+    <EmbeddedResource Include="Configs\Offers.yaml" />
+	<None Remove="Configs\Profile.yaml" />
+    <EmbeddedResource Include="Configs\Profile.yaml" />
+	<None Remove="Configs\SideMenuOrder.yaml" />
+    <EmbeddedResource Include="Configs\SideMenuOrder.yaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configs\" />
+  </ItemGroup>
+</Project>
