@@ -120,7 +120,6 @@
     <BuildIpa>true</BuildIpa>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Info.plist" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
