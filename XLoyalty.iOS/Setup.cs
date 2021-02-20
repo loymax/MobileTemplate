@@ -8,6 +8,8 @@
     using Loymax.Core.Modules;
     using Loymax.Support.Style.iOS.Managers;
     using Loymax.Support.Style.iOS.Settings;
+    using Loymax.Core.Providers.Interfaces;
+    using MvvmCross;
     using MvvmCross.Platforms.Ios.Core;
     using MvvmCross.Platforms.Ios.Presenters;
     using UIKit;
@@ -58,6 +60,12 @@
         {
             base.AddPlatformModules(registry);
             <%- iosSetupContext %>
+        }
+
+        protected override void InitializeLastChance()
+        {
+            base.InitializeLastChance();
+            <%- registerGoogleAnalytics %>
         }
     }
 }

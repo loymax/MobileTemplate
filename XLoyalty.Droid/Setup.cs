@@ -4,7 +4,10 @@ namespace <%- namespaceContext %>.Droid
     using Loymax.Core;
     using Loymax.Core.Droid;
     using Loymax.Core.Modules;
+    using Loymax.Core.Providers.Interfaces;
+    using MvvmCross;
     using <%- namespaceContext %>.Core;
+    <%- droidUsingGoogleAnalytics %>
 
     public class Setup : BaseDroidSetup
     {
@@ -17,6 +20,12 @@ namespace <%- namespaceContext %>.Droid
         {
             base.AddPlatformModules(registry);
             <%- droidSetupContext %>
+        }
+
+        protected override void InitializeLastChance()
+        {
+            base.InitializeLastChance();
+            <%- registerGoogleAnalytics %>
         }
     }
 }
