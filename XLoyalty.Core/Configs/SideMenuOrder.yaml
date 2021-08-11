@@ -5,7 +5,7 @@
   - PersonalOffersViewModel.Title
   - PersonalGoods.Title
   - ShoppingBasketsViewModel.Title
-  - BaseMerchantsViewModel.Title
+  - MerchantsViewModel.Title
   - PurchaseHistoryViewModel.Title
   - NotificationsViewModel.Title
   - ProfileViewModel.Title

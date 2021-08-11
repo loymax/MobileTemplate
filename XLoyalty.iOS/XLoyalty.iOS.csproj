@@ -192,8 +192,8 @@
     <ImageAsset Include="Assets.xcassets\ic_basket_full.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_phone.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_phone.imageset\ic_phone%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_phone.imageset\ic_phone%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_phone.imageset\icons8-phone-90.png" />
+    <ImageAsset Include="Assets.xcassets\ic_phone.imageset\icons8-phone-60.png" />
     <ImageAsset Include="Assets.xcassets\ic_lock.imageset\ic_lock%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_lock.imageset\ic_lock%403x.png" />
     <ImageAsset Include="Assets.xcassets\im_logo.imageset\Contents.json" />
@@ -369,6 +369,9 @@
     <ImageAsset Include="Assets.xcassets\ic_close.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_close.imageset\close%403x.png" />
     <ImageAsset Include="Assets.xcassets\ic_close.imageset\close%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_close_view.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_close_view.imageset\ic_close_view%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_close_view.imageset\ic_close_view%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_referral_cell.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_referral_cell.imageset\ic_referral_cell%403x.png" />
     <ImageAsset Include="Assets.xcassets\ic_referral_cell.imageset\ic_referral_cell%402x.png" />
@@ -378,6 +381,27 @@
     <ImageAsset Include="Assets.xcassets\ic_filter.imageset\filter-75.png" />
     <ImageAsset Include="Assets.xcassets\ic_filter.imageset\filter-50.png" />
     <ImageAsset Include="Assets.xcassets\ic_filter.imageset\filter-25.png" />
+    <ImageAsset Include="Assets.xcassets\ic_apple.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_apple.imageset\ic_apple.png" />
+    <ImageAsset Include="Assets.xcassets\ic_map_left_chevron.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_map_left_chevron.imageset\SF_chevron_left_square_fill%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_map_left_chevron.imageset\SF_chevron_left_square_fill%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_map_left_chevron.imageset\SF_chevron_left_square_fill%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_map_location.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_map_location.imageset\SF_location_slash_fill%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_map_location.imageset\SF_location_slash_fill%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_map_minus.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_map_minus.imageset\SF_minus_square_fill%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_map_minus.imageset\SF_minus_square_fill%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_map_minus.imageset\SF_minus_square_fill%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu.imageset\ic_menu%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu.imageset\ic_menu%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_route.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_route.imageset\ic_route_w.png" />
+    <ImageAsset Include="Assets.xcassets\ic_map_plus.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_map_plus.imageset\SF_plus_square_on_square_fill%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_map_plus.imageset\SF_plus_square_on_square_fill%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -453,8 +477,16 @@
     <Folder Include="Assets.xcassets\ic_action_attention.imageset\" />
     <Folder Include="Assets.xcassets\ic_referral_cell.imageset\" />
     <Folder Include="Assets.xcassets\ic_close.imageset\" />
+    <Folder Include="Assets.xcassets\ic_close_view.imageset\" />
     <Folder Include="Assets.xcassets\ic_warning.imageset\" />
     <Folder Include="Assets.xcassets\ic_filter.imageset\" />
+    <Folder Include="Assets.xcassets\ic_apple.imageset\" />
+    <Folder Include="Assets.xcassets\ic_map_left_chevron.imageset\" />
+    <Folder Include="Assets.xcassets\ic_map_location.imageset\" />
+    <Folder Include="Assets.xcassets\ic_map_minus.imageset\" />
+    <Folder Include="Assets.xcassets\ic_map_plus.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu.imageset\" />
+    <Folder Include="Assets.xcassets\ic_route.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\<%- namespaceContext %>.Core\<%- namespaceContext %>.Core.csproj">

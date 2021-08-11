@@ -42,7 +42,6 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="FodyWeavers.xml" />
     <None Remove="Locales\ru.yaml" />
     <EmbeddedResource Include="Locales\ru.yaml" />
     <None Remove="Configs\config.yaml" />

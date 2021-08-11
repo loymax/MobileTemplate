@@ -14,6 +14,7 @@
     using MvvmCross.Platforms.Ios.Presenters;
     using UIKit;
     using <%- namespaceContext %>.Core;
+    <%- iosUsingGoogleAnalytics %>
 
     public class Setup : BaseIosSetup
     {

@@ -39,9 +39,13 @@
     <Optimize>false</Optimize>
     <DefineConstants>__ANDROID__;__MOBILE__;DEBUG</DefineConstants>
     <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
-    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <ConsolePause>false</ConsolePause>
     <AndroidSupportedAbis>arm64-v8a;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
+    <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
+    <AndroidDexTool>d8</AndroidDexTool>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -49,11 +53,19 @@
     <ConsolePause>false</ConsolePause>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
-    <AndroidSupportedAbis>armeabi-v7a;arm64-v8a</AndroidSupportedAbis>
+    <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a</AndroidSupportedAbis>
     <MandroidI18n />
     <Debugger>Xamarin</Debugger>
     <DebugSymbols>False</DebugSymbols>
     <RunCodeAnalysis>True</RunCodeAnalysis>
+    <AndroidEnableSGenConcurrent>false</AndroidEnableSGenConcurrent>
+    <AndroidDexTool>d8</AndroidDexTool>
+    <AotAssemblies>true</AotAssemblies>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
+    <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
+    <AndroidUseDefaultAotProfile>false</AndroidUseDefaultAotProfile>
+    <AndroidTlsProvider>btls</AndroidTlsProvider>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -66,8 +78,15 @@
     <Debugger>Xamarin</Debugger>
     <DebugSymbols>False</DebugSymbols>
     <RunCodeAnalysis>True</RunCodeAnalysis>
+    <AndroidEnableSGenConcurrent>false</AndroidEnableSGenConcurrent>
+    <AndroidDexTool>d8</AndroidDexTool>
+    <AotAssemblies>true</AotAssemblies>
+    <AndroidUseAapt2>true</AndroidUseAapt2>
+    <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
+    <AndroidUseDefaultAotProfile>false</AndroidUseDefaultAotProfile>
+    <AndroidTlsProvider>btls</AndroidTlsProvider>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
-    
   <ItemGroup>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
@@ -489,6 +508,25 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_menu_language.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_menu_language.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_menu_language.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_round.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_foreground.png" />
+    <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
+    <AndroidResource Include="Resources\drawable\ic_splashscreen.xml" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_menu_about.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_menu_about.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_menu_about.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_menu_about.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu_about.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

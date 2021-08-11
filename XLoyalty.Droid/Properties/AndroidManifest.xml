@@ -2,8 +2,9 @@
 <manifest 
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="<%- applicationIdContext %>"
-    android:versionCode="1"
-    android:installLocation="auto">
+    android:versionName="1.0.0"
+    android:installLocation="auto"
+    android:versionCode="1">
 	  <uses-sdk 
         android:minSdkVersion="21"
         android:targetSdkVersion="30" />
@@ -11,7 +12,8 @@
         android:theme="@style/AppTheme.Main"
         android:usesCleartextTraffic="true"
         android:label="<%- applicationNameContext %>"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round">
         <provider 
             android:name="androidx.core.content.FileProvider"
             android:authorities="<%- applicationIdContext %>.fileprovider"
