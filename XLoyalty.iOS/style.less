@@ -1,13 +1,13 @@
 ﻿@tintColor: <%- styleTintColor %>;
 @accentColor: <%- styleAccentColor %>;
 @barButtonTintColor: #FFFFFF;
-@backgroundColor: #F2F2F2;
+@backgroundColor: #F9FAFD;
 
 @primaryTextColor: #212121;
 @secondaryTextColor: #757575;
 @cardColor: #EEEEEE;
 
-@primaryBorderRadius: 8;
+@primaryBorderRadius: 12;
 
 // layers
 
@@ -124,19 +124,10 @@ UINavigationBar {
 
 // menu
 
-lmx_BaseMenuHeaderView_BrandLogo {
-    image: im_logo;
-    content-mode: scale-aspect-fit;
-}
-
 // offers
 
 lmx_OffersView_MerchantMapBarButtonItem {
     image: ic_pin_map;
-}
-
-lmx_OffersTableViewCell_RewardContainerView {
-    background-color: @accentColor;
 }
 
 lmx_OffersTableViewCell_DescriptionImageView {
@@ -152,38 +143,17 @@ lmx_OfferDetailsView_ShowMerchantOnMapButton {
     tint-color: @barButtonTintColor;
 }
 
-lmx_OfferDetailsView_DateRangeImageView {
-    image: ic_calendar;
-}
-
-lmx_PersonalOffersTableViewCell_DateImageView {
-    image: ic_calendar;
-}
-
 lmx_PersonalOfferDetails_MerchantMapBarButtonItem {
     image-normal: ic_pin_map;
     tint-color: @barButtonTintColor;
-}
-
-lmx_PersonalOfferDetailHeaderView_DateRangeImageView {
-    image: ic_calendar;
 }
 
 lmx_PersonalOfferDetailHeaderView_GiftImageView {
     image: ic_menu_goods_offers;
 }
 
-lmx_PersonalOffersDetailsTableViewCell_DateImageView {
-    image: ic_calendar;
-}
-
 lmx_PersonalOffersDetailsTableViewCell_SearchImageView {
     image: ic_search;
-}
-
-lmx_OfferDetailsView_RewardContainerView {
-    background-color: @accentColor;
-    layer: shadowLayer();
 }
 
 lmx_OffersTableViewCell {
@@ -192,10 +162,6 @@ lmx_OffersTableViewCell {
 
 lmx_OffersTableViewCell_CardView {
     layer: cardViewLayer();
-}
-
-lmx_OffersTableViewCell_DateRangeImageView {
-    image: ic_calendar;
 }
 
 lmx_OfferDetailsView_MerchantMapButton {
@@ -211,7 +177,8 @@ lmx_PersonalOffersDetailsTableViewCell_ArrowDownImageView {
 }
 
 lmx_OffersTableViewCell_ProgressBar {
-    track-tint-color: @tintColor;
+    progress-tint-color: @tintColor;
+    track-tint-color: #DDDDDD;
 }
 
 lmx_OffersView_DropDownMenuBarButtonItem {
@@ -221,6 +188,25 @@ lmx_OffersView_DropDownMenuBarButtonItem {
 
 lmx_OfferDetailsView_BrandsImageView {
     image: ic_pin_map;
+}
+
+lmx_Offers_RewardWith_TitleFont {
+    font: $(system-Semibold@16);
+}
+
+lmx_Offers_RewardWith_DetailFont {
+    font: $(system-Semibold@12);
+}
+
+// ml
+
+lmx_PersonalOffersMLTableViewCell_ProgressBar {
+    progress-tint-color: @tintColor;
+    track-tint-color: #DDDDDD;
+}
+
+lmx_PersonalOffersMLTableViewCell {
+    layer: shadowLayer();
 }
 
 // offers goods
@@ -277,11 +263,6 @@ lmx_NotificationTableViewCell_TitleLabel {
 
 lmx_NotificationTableViewCell_CircleImageView {
     background-color: @accentColor;
-}
-
-lmx_NotificationDetailsView_ImageView {
-    layer: shadowLayer();
-    content-mode: scale-aspect-fit;
 }
 
 // support
@@ -398,6 +379,16 @@ lmx_SingleLineTableViewCell_ImageView {
 lmx_CustomTableViewCell_ImageView {
     tint-color: #666666;
     content-mode: scale-aspect-fit;
+}
+
+lmx_SingleLineImageTableViewCell_ImageView {
+    tint-color: #666666;
+    content-mode: scale-aspect-fit;
+}
+
+lmx_ProfileStatusDetailsView_StatusRulesBarButtonItem {
+    image: ic_about;
+    tint-color: #FFFFFF;
 }
 
 // purchase history

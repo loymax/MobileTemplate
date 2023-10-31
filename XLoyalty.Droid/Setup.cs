@@ -6,6 +6,11 @@ namespace <%- namespaceContext %>.Droid
     using Loymax.Core.Modules;
     using Loymax.Core.Providers.Interfaces;
     using MvvmCross;
+    using MvvmCross.IoC;    
+    using Microsoft.Extensions.Logging;
+    using Serilog.Extensions.Logging;
+    using Serilog;
+    using Loymax.Core.Droid.Implements;
     using <%- namespaceContext %>.Core;
     <%- droidUsingGoogleAnalytics %>
 
@@ -22,10 +27,38 @@ namespace <%- namespaceContext %>.Droid
             <%- droidSetupContext %>
         }
 
-        protected override void InitializeLastChance()
+        protected override void InitializeLastChance(IMvxIoCProvider iocProvider)
         {
-            base.InitializeLastChance();
+            base.InitializeLastChance(iocProvider);
             <%- registerGoogleAnalytics %>
+        }
+
+        protected override ILoggerProvider CreateLogProvider()
+        {
+#if !RELEASE
+            Mvx.IoCProvider.RegisterType<ILoggerProvider, LogProvider>();
+            return new LogProvider();
+#else
+			return base.CreateLogProvider();
+#endif
+        }
+
+        protected override ILoggerFactory CreateLogFactory()
+        {
+#if !RELEASE
+            var loggerProviders = new LoggerProviderCollection();
+            loggerProviders.AddProvider(Mvx.IoCProvider.Resolve<ILoggerProvider>());
+            Log.Logger = new LoggerConfiguration()
+               .MinimumLevel.Verbose()
+               .WriteTo.Providers(loggerProviders)
+               .CreateLogger();
+
+            var loggerFactory = new SerilogLoggerFactory();
+            loggerFactory.AddProvider(Mvx.IoCProvider.Resolve<ILoggerProvider>());
+            return loggerFactory;
+#else
+            return base.CreateLogFactory();
+#endif
         }
     }
 }

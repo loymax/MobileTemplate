@@ -5,9 +5,9 @@
     android:versionName="1.0.0"
     android:installLocation="auto"
     android:versionCode="1">
-	  <uses-sdk 
+    <uses-sdk 
         android:minSdkVersion="21"
-        android:targetSdkVersion="30" />
+        android:targetSdkVersion="33" />
     <application 
         android:theme="@style/AppTheme.Main"
         android:usesCleartextTraffic="true"
@@ -24,4 +24,18 @@
                 android:resource="@xml/provider_paths" />
         </provider>
     </application>
+    <queries>
+        <package android:name="com.google.android.apps.maps" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="yandexmaps" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.PICK" />
+            <data android:mimeType="vnd.android.cursor.dir/image" />
+        </intent>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
 </manifest>

@@ -1,9 +1,10 @@
 ﻿Order:
   - SignInViewModel.Title
-  - ProfileCardViewModel.Title
+  - ProfileCardOldViewModel.Title
   - OffersViewModel.Title
   - PersonalOffersViewModel.Title
   - PersonalGoods.Title
+  - PersonalOffersMLViewModel.Title
   - ShoppingBasketsViewModel.Title
   - MerchantsViewModel.Title
   - PurchaseHistoryViewModel.Title

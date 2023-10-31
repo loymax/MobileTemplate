@@ -20,50 +20,51 @@ namespace <%- namespaceContext %>.Droid.Views
     [Activity(Theme = "@style/AppTheme.Main"
         , LaunchMode = LaunchMode.SingleTask
         , ScreenOrientation = ScreenOrientation.Portrait
-        , WindowSoftInputMode = SoftInput.StateHidden)]
+        , WindowSoftInputMode = SoftInput.AdjustResize)]
     public class MainActivity : BaseMenuFragmentHostActivity<MainMenuFragmentHostViewModel>, FragmentManager.IOnBackStackChangedListener
     {
-        private DrawerLayout drawerLayout;
-        private ActionBarDrawerToggle drawerToggle;
-        private SupportToolbar toolbar;
+        private DrawerLayout _drawerLayout;
+        private ActionBarDrawerToggle _drawerToggle;
+        private SupportToolbar _toolbar;
 
-        protected override FrameLayout ContentView => this.FindViewById<FrameLayout>(Resource.Id.main_layoutContent);
+        protected override FrameLayout ContentView => FindViewById<FrameLayout>(Resource.Id.main_layoutContent);
 
-        protected override DrawerLayout DrawerLayout => this.drawerLayout;
+        protected override DrawerLayout DrawerLayout => _drawerLayout;
 
         protected override int ViewId => Resource.Layout.main_activity;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            this.toolbar = this.FindViewById<SupportToolbar>(Resource.Id.lmx_toolbar);
-            this.drawerLayout = this.FindViewById<DrawerLayout>(Resource.Id.main_DrawerLayout);
+            _toolbar = FindViewById<SupportToolbar>(Resource.Id.lmx_toolbar);
+            _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.main_DrawerLayout);
             // Toolbar will now take on default actionbar characteristics
-            this.SetSupportActionBar(this.toolbar);
-            this.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            this.SupportActionBar.SetDisplayShowTitleEnabled(true);
-            this.drawerToggle = new ActionBarDrawerToggle(
+            SetToolBarInsets(_toolbar);
+            SetSupportActionBar(_toolbar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetDisplayShowTitleEnabled(true);
+            _drawerToggle = new ActionBarDrawerToggle(
                 this,
-                this.drawerLayout,
+                _drawerLayout,
                 Resource.String.navigation_drawer_open,
 				Resource.String.navigation_drawer_close)
             {
                 DrawerIndicatorEnabled = true
             };
-            this.drawerLayout.AddDrawerListener(this.drawerToggle);
-            this.drawerToggle.SyncState();
-            this.SupportFragmentManager.AddOnBackStackChangedListener(this);
-            this.ViewModel?.ShowMenuViewModel();
+            _drawerLayout.AddDrawerListener(_drawerToggle);
+            _drawerToggle.SyncState();
+            SupportFragmentManager.AddOnBackStackChangedListener(this);
+            ViewModel?.ShowMenuViewModel();
         }
 
         public void OnBackStackChanged()
         {
-            this.SupportFragmentManager.SyncActionBarArrowState(this.drawerToggle, this.drawerLayout);
+            SupportFragmentManager.SyncActionBarArrowState(_drawerToggle, _drawerLayout);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            if (this.drawerToggle.OnOptionsItemSelected(item))
+            if (_drawerToggle.OnOptionsItemSelected(item))
             {
                 return true;
             }
@@ -71,7 +72,7 @@ namespace <%- namespaceContext %>.Droid.Views
             switch (item.ItemId)
             {
                 default:
-                    return this.OnContextItemSelected(item);
+                    return OnContextItemSelected(item);
             }
         }
     }

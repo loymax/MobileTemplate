@@ -90,8 +90,6 @@
         <item
             name="lmx_ic_action_checkmark">@drawable/ic_action_checkmark</item>
         <item
-            name="lmx_ic_action_delete">@drawable/ic_action_delete</item>
-        <item
             name="lmx_ic_action_email">@drawable/ic_action_email</item>
         <item
             name="lmx_ic_action_flash">@drawable/ic_action_flash_on</item>
@@ -103,13 +101,15 @@
             name="lmx_ic_action_phone">@drawable/ic_action_phone</item>
         <item
             name="lmx_ic_offers_drop_down_menu">@drawable/ic_drop_down_menu</item>
+        <item
+            name="lmx_ic_close">@drawable/ic_close</item>
         <!--  Icons.Merchants  -->
         <item
             name="lmx_ic_merchants_pin">@drawable/ic_merchants_pin</item>
         <item
             name="lmx_ic_merchants_filter">@drawable/ic_merchant_filter</item>
         <item
-            name="lmx_ic_search">@drawable/ic_search_w</item>
+            name="lmx_ic_cluster_pin">@drawable/ic_marker</item>
         <!--  Icons.Offers  -->
         <item
             name="lmx_ic_offers_map">@drawable/ic_map</item>
@@ -130,8 +130,6 @@
             name="lmx_ic_action_plus_math">@drawable/ic_action_plus_math</item>
         <item
             name="lmx_ic_barcode_small">@drawable/ic_barcode_small</item>
-        <item
-            name="lmx_ic_close">@drawable/ic_close</item>
         <item
             name="lmx_ic_my_card">@drawable/ic_my_card</item>
         <item
@@ -157,5 +155,10 @@
             name="lmx_ic_action_attention">@drawable/ic_action_attention</item>
         <item
             name="lmx_ic_action_sent">@drawable/ic_action_sent</item>
+        <!--  Icons.AboutApp  -->
+        <item
+              name="lmx_background_color_logo">@color/ic_launcher_background</item>
+        <item
+              name="lmx_ic_about_app_icon">@mipmap/ic_launcher</item>
     </style>
 </resources>

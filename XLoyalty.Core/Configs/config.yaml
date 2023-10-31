@@ -1,8 +1,6 @@
 ﻿Configs: &Default
   Version: 2
   AppName: <%- applicationNameContext %>
-  AgreementSettings:
-    Content: offer.html
   ServerSettings:
     VerifyPhoneCodeLength: 6
     ForceDisableInputSocial: False
@@ -19,11 +17,13 @@
   Localization:
     Enable: False #Подключение локализации
     ViewLocalization: False #Отображение стартового экрана с выбором языка при первом запуске приложения
+  PrereviewScreensEnable: True
 
 Development:
   <<: *Default
   LoymaxEndpoint: 
-    AppUrl: http://public.rc.iis.local/api
+    AppUrl: <%- serverUrlContext %>
+    AuthorizationUrl: <%- serverAuthorizationUrlContext %>
     ClientId: ""
     PublicKey: ""
     OfferId: "required"
@@ -39,7 +39,8 @@ Development:
 Staging:
   <<: *Default
   LoymaxEndpoint: 
-    AppUrl: https://public-demo.loymax.net/api
+    AppUrl: <%- serverUrlContext %>
+    AuthorizationUrl: <%- serverAuthorizationUrlContext %>
     ClientId: ""
     PublicKey: ""
     OfferId: "required"
@@ -56,6 +57,7 @@ Production:
   <<: *Default
   LoymaxEndpoint:
     AppUrl: <%- serverUrlContext %>
+    AuthorizationUrl: <%- serverAuthorizationUrlContext %>
     ClientId: ""
     PublicKey: ""
     OfferId: "required"

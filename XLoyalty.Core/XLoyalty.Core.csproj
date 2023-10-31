@@ -18,6 +18,7 @@
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>false</GenerateBindingRedirectsOutputType>
     <NetStandardImplicitPackageVersion>2.0.1</NetStandardImplicitPackageVersion>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1603;NU1605</WarningsAsErrors>
   </PropertyGroup>
   <!-- Try set Loymax.ruleset -->
   <PropertyGroup Condition="Exists('..\Loymax.ruleset')">

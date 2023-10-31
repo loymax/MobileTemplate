@@ -1,5 +1,6 @@
 ﻿namespace <%- namespaceContext %>.iOS
 {
+    using JASidePanel.Navigation.iOS;
     using System.Collections.Generic;
     using Loymax.Core;
     using Loymax.Core.iOS;
@@ -9,22 +10,24 @@
     using Loymax.Support.Style.iOS.Managers;
     using Loymax.Support.Style.iOS.Settings;
     using Loymax.Core.Providers.Interfaces;
+    using Loymax.Core.iOS.Implements;
     using MvvmCross;
+    using MvvmCross.Binding.Bindings.Target.Construction;
     using MvvmCross.Platforms.Ios.Core;
     using MvvmCross.Platforms.Ios.Presenters;
+    using MvvmCross.IoC;
+    using Microsoft.Extensions.Logging;
+    using Serilog;
+    using Serilog.Extensions.Logging;
     using UIKit;
     using <%- namespaceContext %>.Core;
     <%- iosUsingGoogleAnalytics %>
 
     public class Setup : BaseIosSetup
     {
-        public Setup(MvxApplicationDelegate applicationDelegate, IMvxIosViewPresenter presenter) : base(applicationDelegate, presenter)
-        {
-        }
+        public Setup(MvxApplicationDelegate applicationDelegate) : base(applicationDelegate) { }
 
-        public Setup(MvxApplicationDelegate applicationDelegate, UIWindow window) : base(applicationDelegate, window)
-        {
-        }
+        protected override IMvxIosViewPresenter CreateViewPresenter() => new JASidebarViewPresenter(ApplicationDelegate, Window);
 
         protected override App CreateLxApp() => new CoreApp();
 
@@ -63,10 +66,38 @@
             <%- iosSetupContext %>
         }
 
-        protected override void InitializeLastChance()
+        protected override void InitializeLastChance(IMvxIoCProvider iocProvider)
         {
-            base.InitializeLastChance();
+            base.InitializeLastChance(iocProvider);
             <%- registerGoogleAnalytics %>
+        }
+
+        protected override ILoggerProvider CreateLogProvider()
+        {
+#if !RELEASE
+            Mvx.IoCProvider.RegisterType<ILoggerProvider, LogProvider>();
+            return new LogProvider();
+#else
+			return base.CreateLogProvider();
+#endif
+        }
+
+        protected override ILoggerFactory CreateLogFactory()
+        {
+#if !RELEASE
+            var loggerProviders = new LoggerProviderCollection();
+            loggerProviders.AddProvider(Mvx.IoCProvider.Resolve<ILoggerProvider>());
+            Log.Logger = new LoggerConfiguration()
+               .MinimumLevel.Verbose()
+               .WriteTo.Providers(loggerProviders)
+               .CreateLogger();
+
+            var loggerFactory = new SerilogLoggerFactory();
+            loggerFactory.AddProvider(Mvx.IoCProvider.Resolve<ILoggerProvider>());
+            return loggerFactory;
+#else
+            return base.CreateLogFactory();
+#endif
         }
     }
 }

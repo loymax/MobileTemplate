@@ -16,6 +16,7 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <SkipValidatePackageReferences>true</SkipValidatePackageReferences>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1603;NU1605</WarningsAsErrors>
   </PropertyGroup>
   <!-- Try set Loymax.ruleset -->
   <PropertyGroup Condition="Exists('..\Loymax.ruleset')">
@@ -33,7 +34,7 @@
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchFloat32>false</MtouchFloat32>
     <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <CodesignKey>iPhone Developer</CodesignKey>
@@ -48,7 +49,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchFloat32>false</MtouchFloat32>
-    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
@@ -62,9 +63,8 @@
     <DefineConstants>__IOS__;__MOBILE__;APPSTORE;RELEASE;TRACE</DefineConstants>
     <OutputPath>bin\iPhone\$(Configuration)</OutputPath>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchFloat32>true</MtouchFloat32>
     <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <MtouchUseLlvm>true</MtouchUseLlvm>
@@ -91,32 +91,13 @@
     <DefineConstants>__IOS__;__MOBILE__;ADHOC;TRACE</DefineConstants>
     <OutputPath>bin\iPhone\$(Configuration)</OutputPath>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchFloat32>true</MtouchFloat32>
     <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignProvision>Automatic:AdHoc</CodesignProvision>
-    <BuildIpa>true</BuildIpa>
-  </PropertyGroup>
-  <!-- AppStore -->
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <DefineConstants>__IOS__;__MOBILE__;APPSTORE;RELEASE;TRACE</DefineConstants>
-    <OutputPath>bin\iPhone\$(Configuration)</OutputPath>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchFloat32>true</MtouchFloat32>
-    <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    <MtouchTlsProvider>Default</MtouchTlsProvider>
-    <MtouchUseLlvm>true</MtouchUseLlvm>
-    <IpaIncludeArtwork>false</IpaIncludeArtwork>
-    <CodesignKey>iPhone Distribution</CodesignKey>
-    <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <BuildIpa>true</BuildIpa>
   </PropertyGroup>
   <ItemGroup>
@@ -221,9 +202,6 @@
     <ImageAsset Include="Assets.xcassets\ic_action_phone.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_action_phone.imageset\ic_action_phone%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_action_phone.imageset\ic_action_phone%403x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_calendar.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_calendar.imageset\ic_calendar%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_calendar.imageset\ic_calendar%403x.png" />
     <ImageAsset Include="Assets.xcassets\ic_password_cell.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_password_cell.imageset\ic_password_cell%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_password_cell.imageset\ic_password_cell%403x.png" />
@@ -254,14 +232,14 @@
     <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_delete.imageset\ic_delete%403x.png" />
     <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_facebook.imageset\ic_facebook-2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_vkontakte.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_vkontakte.imageset\ic_vkontakte%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_vkontakte.imageset\ic_vkontakte%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_vkontakte.imageset\ic_vkontakte-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_vkontakte.imageset\ic_vkontakte-2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_odnoklassniki.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_odnoklassniki.imageset\ic_odnoklassniki%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_odnoklassniki.imageset\ic_odnoklassniki%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_odnoklassniki.imageset\ic_odnoklassniki-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_odnoklassniki.imageset\ic_odnoklassniki-2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_twitter.imageset\ic_twitter%403x.png" />
@@ -271,12 +249,9 @@
     <ImageAsset Include="Assets.xcassets\ic_scanner.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_scanner.imageset\ic_scanner%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_scanner.imageset\ic_scanner%403x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_googleplus.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_googleplus.imageset\ic_googleplus%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_googleplus.imageset\ic_googleplus%403x.png" />
     <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram%402x.png" />
-    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_instagram.imageset\ic_instagram-2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_plus.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_plus.imageset\ic_plus%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_plus.imageset\ic_plus%403x.png" />
@@ -382,7 +357,8 @@
     <ImageAsset Include="Assets.xcassets\ic_filter.imageset\filter-50.png" />
     <ImageAsset Include="Assets.xcassets\ic_filter.imageset\filter-25.png" />
     <ImageAsset Include="Assets.xcassets\ic_apple.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ic_apple.imageset\ic_apple.png" />
+    <ImageAsset Include="Assets.xcassets\ic_apple.imageset\ic_apple-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_apple.imageset\ic_apple-2x.png" />
     <ImageAsset Include="Assets.xcassets\ic_map_left_chevron.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_map_left_chevron.imageset\SF_chevron_left_square_fill%403x.png" />
     <ImageAsset Include="Assets.xcassets\ic_map_left_chevron.imageset\SF_chevron_left_square_fill%402x.png" />
@@ -402,10 +378,72 @@
     <ImageAsset Include="Assets.xcassets\ic_map_plus.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\ic_map_plus.imageset\SF_plus_square_on_square_fill%402x.png" />
     <ImageAsset Include="Assets.xcassets\ic_map_plus.imageset\SF_plus_square_on_square_fill%403x.png" />
+    <ImageAsset Include="Assets.xcassets\im_update.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_update.imageset\im_update.png" />
+    <ImageAsset Include="Assets.xcassets\im_intro_personal_discounts.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_intro_personal_discounts.imageset\im_intro_personal_discounts.png" />
+    <ImageAsset Include="Assets.xcassets\im_intro_birthday_bonuses.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_intro_birthday_bonuses.imageset\im_intro_birthday_bonuses.png" />
+    <ImageAsset Include="Assets.xcassets\im_intro_status_system.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_intro_status_system.imageset\im_intro_status_system.png" />
+    <ImageAsset Include="Assets.xcassets\im_intro_coupons.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_intro_coupons.imageset\im_intro_coupons.png" />
+    <ImageAsset Include="Assets.xcassets\im_intro_virtual_card.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_intro_virtual_card.imageset\im_intro_virtual_card.png" />
+    <ImageAsset Include="Assets.xcassets\im_intro_bonuses_purchases.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_intro_bonuses_purchases.imageset\im_intro_bonuses_purchases.png" />
+    <ImageAsset Include="Assets.xcassets\im_intro_language.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_intro_language.imageset\im_intro_language.png" />
+    <ImageAsset Include="Assets.xcassets\im_intro_notifications.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_intro_notifications.imageset\im_intro_notifications.png" />
+    <ImageAsset Include="Assets.xcassets\ic_sandclock.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_sandclock.imageset\ic_sandclock.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_personal_offers_ml.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_personal_offers_ml.imageset\ic_personal_offers_ml%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_menu_personal_offers_ml.imageset\ic_personal_offers_ml%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_soon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_soon.imageset\ic_soon-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_soon.imageset\ic_soon-2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_date_time.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_date_time.imageset\ic_date_time-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_date_time.imageset\ic_date_time-2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete_cell.imageset\ic_delete_cell-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete_cell.imageset\ic_delete_cell-2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_delete_cell.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_subscriptions.imageset\ic_subscriptions-2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_subscriptions.imageset\ic_subscriptions-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_subscriptions.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person-2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_person.imageset\ic_person-3x.png" />
+    <ImageAsset Include="Assets.xcassets\im_logo_menu.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_logo_menu.imageset\im_logo_menu-2x.png" />
+    <ImageAsset Include="Assets.xcassets\im_logo_menu.imageset\im_logo_menu-3x.png" />
+    <ImageAsset Include="Assets.xcassets\im_settings.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\im_settings.imageset\im_settings.png" />
+    <ImageAsset Include="Assets.xcassets\ic_about.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_about.imageset\about-25.png" />
+    <ImageAsset Include="Assets.xcassets\ic_about.imageset\about-50.png" />
+    <ImageAsset Include="Assets.xcassets\ic_about.imageset\about-75.png" />
+    <ImageAsset Include="Assets.xcassets\ic_push_notification.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_push_notification.imageset\ic_push_notification-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_push_notification.imageset\ic_push_notification-2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_push_notification.imageset\ic_push_notification-1x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_arrow_right.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_arrow_right.imageset\ic_arrow_right-3x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_arrow_right.imageset\ic_arrow_right-2x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_dislike.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_like_feedback.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ic_like_feedback.imageset\ic_like_feedback%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_like_feedback.imageset\ic_like_feedback%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_like_feedback.imageset\ic_like_feedback%401x.png" />
+    <ImageAsset Include="Assets.xcassets\ic_dislike.imageset\ic_unlike-2.png" />
+    <ImageAsset Include="Assets.xcassets\ic_dislike.imageset\ic_unlike-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Assets.xcassets\ic_lock.imageset\" />
+    <Folder Include="Assets.xcassets\ic_about.imageset\" />
     <Folder Include="Assets.xcassets\ic_action_phone.imageset\" />
     <Folder Include="Assets.xcassets\ic_pin_map.imageset\" />
     <Folder Include="Assets.xcassets\ic_merchants_list.imageset\" />
@@ -428,7 +466,6 @@
     <Folder Include="Assets.xcassets\ic_send.imageset\" />
     <Folder Include="Assets.xcassets\ic_action_email.imageset\" />
     <Folder Include="Assets.xcassets\ic_action_phone.imageset\" />
-    <Folder Include="Assets.xcassets\ic_calendar.imageset\" />
     <Folder Include="Assets.xcassets\ic_password_cell.imageset\" />
     <Folder Include="Assets.xcassets\ic_cards_cell.imageset\" />
     <Folder Include="Assets.xcassets\ic_profile_cell.imageset\" />
@@ -443,7 +480,6 @@
     <Folder Include="Assets.xcassets\ic_twitter.imageset\" />
     <Folder Include="Assets.xcassets\ic_mymail.imageset\" />
     <Folder Include="Assets.xcassets\ic_scanner.imageset\" />
-    <Folder Include="Assets.xcassets\ic_googleplus.imageset\" />
     <Folder Include="Assets.xcassets\ic_instagram.imageset\" />
     <Folder Include="Assets.xcassets\ic_plus.imageset\" />
     <Folder Include="Assets.xcassets\ic_sms.imageset\" />
@@ -487,6 +523,25 @@
     <Folder Include="Assets.xcassets\ic_map_plus.imageset\" />
     <Folder Include="Assets.xcassets\ic_menu.imageset\" />
     <Folder Include="Assets.xcassets\ic_route.imageset\" />
+    <Folder Include="Assets.xcassets\im_update.imageset\" />
+    <Folder Include="Assets.xcassets\im_intro_personal_discounts.imageset\" />
+    <Folder Include="Assets.xcassets\im_intro_birthday_bonuses.imageset\" />
+    <Folder Include="Assets.xcassets\im_intro_status_system.imageset\" />
+    <Folder Include="Assets.xcassets\im_intro_coupons.imageset\" />
+    <Folder Include="Assets.xcassets\im_intro_virtual_card.imageset\" />
+    <Folder Include="Assets.xcassets\im_intro_bonuses_purchases.imageset\" />
+    <Folder Include="Assets.xcassets\im_intro_language.imageset\" />
+    <Folder Include="Assets.xcassets\im_intro_notifications.imageset\" />
+    <Folder Include="Assets.xcassets\ic_sandclock.imageset\" />
+    <Folder Include="Assets.xcassets\ic_menu_personal_offers_ml.imageset\" />
+    <Folder Include="Assets.xcassets\ic_soon.imageset\" />
+    <Folder Include="Assets.xcassets\ic_date_time.imageset\" />
+    <Folder Include="Assets.xcassets\im_logo_menu.imageset\" />
+    <Folder Include="Assets.xcassets\im_settings.imageset\" />
+    <Folder Include="Assets.xcassets\ic_push_notification.imageset\" />
+    <Folder Include="Assets.xcassets\ic_delete_cell.imageset\" />
+    <Folder Include="Assets.xcassets\ic_dislike.imageset\" />
+    <Folder Include="Assets.xcassets\ic_like_feedback.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\<%- namespaceContext %>.Core\<%- namespaceContext %>.Core.csproj">
@@ -502,6 +557,10 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="style.less" />
+    <BundleResource Include="Resources\IntroBackground.svg" />
+    <BundleResource Include="Resources\stub_category_goods.png" />
+    <BundleResource Include="Resources\im_offers_placeholder.png" />
+    <BundleResource Include="Resources\thanks.json" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Configs\Core.yaml" />
